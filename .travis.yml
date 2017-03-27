@@ -1,0 +1,8 @@
+language: csharp
+solution: Matrix.sln
+install:
+  - nuget restore Matrix.sln
+  - nuget install NUnit.Runners -Version 3.6.1 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release Matrix.sln
+  - mono ./testrunner/NUnit.Runners.3.6.1/tools/nunit-console.exe ./Matrix/bin/Release/Matrix.exe
