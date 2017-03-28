@@ -1,11 +1,9 @@
-﻿using System.IO;
-
-namespace Matrix
+﻿namespace Matrix
 {
     interface IMatrix
     {
-        void Read(Stream stream);
-        void Write(Stream stream);
+        void Read(string matrix);
+        string Write();
         void Transpose();
     }
 }
